@@ -1,0 +1,8 @@
+- Named Entity Recognition with Conditional Random Fields in Python
+https://www.depends-on-the-definition.com/named-entity-recognition-conditional-random-fields-python/
+
+- Named Entity Recognition using sklearn-crfsuite
+https://eli5.readthedocs.io/en/latest/tutorials/sklearn_crfsuite.html
+
+- Named Entity Recognition and Classification with Scikit-Learn
+https://towardsdatascience.com/named-entity-recognition-and-classification-with-scikit-learn-f05372f07ba2

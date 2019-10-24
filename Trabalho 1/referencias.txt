@@ -1,0 +1,11 @@
+- WordNet PT
+http://wordnet.pt/
+
+- WordNet BR
+http://www.nilc.icmc.usp.br/wordnetbr/
+
+- OntoPT
+http://ontopt.dei.uc.pt/
+
+- WordNet EN
+https://wordnet.princeton.edu/
