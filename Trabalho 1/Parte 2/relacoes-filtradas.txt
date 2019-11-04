@@ -9,26 +9,26 @@ RELAÇÕES:
         PLC, ORG;
         ORG, ORG;
 
-2 - "pertence a(ao)":
+3 - "pertence a(ao)":
         PER, ORG;
         ORG, ORG;
         ORG, PLC;
 
-3 - "é localizada(o) em":
+4 - "é localizada(o) em":
         ORG, ORG;
         ORG, PLC;
 
-4 - "é o local de":
+5 - "é o local de":
         PLC, ORG;
         ORG, ORG;
         ORG, PLC;
 
-5 - "é fundada(o) por":
+6 - "é fundada(o) por":
         ORG, PER;
 
-6 - "sigla":
+7 - "sigla":
         ORG, ORG;
 
-7 - "está relacionada(o) com":
+8 - "está relacionada(o) com":
         ALL;
 
