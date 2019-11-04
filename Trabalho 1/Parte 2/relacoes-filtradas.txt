@@ -1,0 +1,34 @@
+RELAÇÕES:
+
+1 - "trabalha em":
+        PER,ORG;
+        ORG,ORG;
+        ORG,PLC;
+
+2 - "trabalha com":
+        PLC, ORG;
+        ORG, ORG;
+
+2 - "pertence a(ao)":
+        PER, ORG;
+        ORG, ORG;
+        ORG, PLC;
+
+3 - "é localizada(o) em":
+        ORG, ORG;
+        ORG, PLC;
+
+4 - "é o local de":
+        PLC, ORG;
+        ORG, ORG;
+        ORG, PLC;
+
+5 - "é fundada(o) por":
+        ORG, PER;
+
+6 - "sigla":
+        ORG, ORG;
+
+7 - "está relacionada(o) com":
+        ALL;
+
