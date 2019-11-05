@@ -17,6 +17,7 @@ RELAÇÕES:
 4 - "é localizada(o) em":
         ORG, ORG;
         ORG, PLC;
+        PER, PLC;
 
 5 - "é o local de":
         PLC, ORG;
