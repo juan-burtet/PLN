@@ -8,6 +8,8 @@ RELAÇÕES:
 2 - "trabalha com":
         PLC, ORG;
         ORG, ORG;
+        ORG, PER;
+        PER, ORG;
 
 3 - "pertence a(ao)":
         PER, ORG;
