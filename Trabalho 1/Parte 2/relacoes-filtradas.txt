@@ -1,36 +1,26 @@
 RELAÇÕES:
 
 1 - "trabalha em":
-        PER,ORG;
-        ORG,ORG;
-        ORG,PLC;
+        (PER,ORG),(ORG,ORG),(ORG,PLC)
 
 2 - "trabalha com":
-        PLC, ORG;
-        ORG, ORG;
-        ORG, PER;
-        PER, ORG;
+        (PLC, ORG),(ORG, ORG),(ORG, PER),(PER, ORG);
 
 3 - "pertence a(ao)":
-        PER, ORG;
-        ORG, ORG;
-        ORG, PLC;
+        (PER, ORG),(ORG, ORG),(ORG, PLC)
 
 4 - "é localizada(o) em":
-        ORG, ORG;
-        ORG, PLC;
-        PER, PLC;
+        (ORG, ORG),(ORG, PLC),(PER, PLC)
 
 5 - "é o local de":
-        PLC, ORG;
-        ORG, ORG;
-        ORG, PLC;
+        (PLC, ORG),(ORG, ORG),(ORG, PLC)
 
 6 - "é fundada(o) por":
-        ORG, PER;
+        (ORG, PER)
 
 7 - "sigla":
-        ORG, ORG;
+
+        (ORG, ORG)
 
 8 - "está relacionada(o) com":
         ALL;
