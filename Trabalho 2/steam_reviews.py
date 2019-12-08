@@ -12,6 +12,7 @@ def get(appid, language='brazilian', printProgress=False):
         **appid** -- The Steam App ID obtained from the game's Store page URL\n
         **params** -- An object used to build the Steam API query. (https://partner.steamgames.com/doc/store/getreviews)
         '''
+        
         response = requests.get(url=ENDPOINT+appid, params=params) # get the data from the endpoint
         return response.json() # return data extracted from the json response
 
@@ -21,21 +22,31 @@ def get(appid, language='brazilian', printProgress=False):
         'json': 1,
         'filter': 'recent', # sort by: recent, update
         'language': language, # languages at https://partner.steamgames.com/doc/store/localization
-        'start_offset': 0, # for pagination
+        'cursor': '*',
         'review_type': 'all', # all, positive, negative
-        'purchase_type': 'all' # all, non_steam_purchase, steam
+        'purchase_type': 'all', # all, non_steam_purchase, steam
+        'num_per_page': '100',
     }
 
     data = _makeRequest(appid, params)
     done = False
 
+    count = 0
+
+    try:
+        total = data['query_summary']['total_reviews']
+    except:
+        return None
+    
     while not done:
         if 'success' in data and data['success'] == 1: # if the query was successful
-            if 'reviews' in data and len(data['reviews']) > 0: # if we received reviews
+            if 'reviews' in data and data['query_summary']['num_reviews'] > 0: # if we received reviews
                 results += data['reviews'] # add the reviews in this query to our results
-                params['start_offset'] += data['query_summary']['num_reviews'] # increase the start offset by the number of reviews received in this response
+                params['cursor'] = data['cursor'] # increase the start offset by the number of reviews received in this response
+                count += data['query_summary']['num_reviews']
                 if printProgress:
-                    print('{amount} reviews found...'.format(amount=params['start_offset']))
+                    print('[%d/%d] reviews found...' % (count, total))
+                #print(data['query_summary']['total_reviews'])
                 data = _makeRequest(appid, params) # get the next page of reviews
             else: # there are no more reviews
                 done = True
@@ -47,5 +58,9 @@ def get(appid, language='brazilian', printProgress=False):
             raise ConnectionError('Steam Web API appreviews request was unsuccessful.')
     
     if printProgress:
-        print("Found all reviews.")
+        if len(results) > 0:
+            print("Found all reviews.")
+        else:
+            print("0 reviews found.")
+    
     return results
